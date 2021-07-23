@@ -1,0 +1,14 @@
+﻿@page "/"
+
+@if (String.IsNullOrEmpty(Nom))
+{
+    <b><u>Votre Nom</u></b><input type="text" @bind="Nom" />
+     
+}
+else
+{
+ <Quizz onAnswer=@DisplayInformations IsDisabled="@_IsDisabled" User="@Nom"></Quizz>
+
+ <h3>Vos réponses</h3>
+  @_reponses
+}
